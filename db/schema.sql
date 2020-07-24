@@ -1,9 +1,11 @@
-CREATE DATABASE `burgers_db`;
+DROP DATABASE IF EXISTS burgers_db;
 
-USE DATABASE `burgers_db`;
+CREATE DATABASE burgers_db;
 
-CREATE TABLE `burgers` (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    burger VARCHAR(50) NOT NULL,
+USE burgers_db;
+
+CREATE TABLE burgers (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    burger VARCHAR(255) NOT NULL,
     devoured BOOLEAN NOT NULL
 );
