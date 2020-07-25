@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 // connect to database
 connection.connect(function(err) {
     if (err) {
-        console.error("error connecting to databse" + err.stack);
+        console.error("error connecting: " + err.stack);
         return;
     }
     console.log("connected as id " + connection.threadId);
