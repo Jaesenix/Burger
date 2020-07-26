@@ -5,16 +5,16 @@ const exphbs = require("express-handlebars");
 const app = express();
 
 // middleware
-app.engine("handlebars", exphbs());
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 app.get("/", function (req, res) {
-    res.render("home");
+    res.render("index");
 });
 
-app.listen(3000);
+app.use('/public', express.static('public'));
 
-// Set the port of our application
-// const PORT = process.env.PORT || 8080;
+const port = Number(process.env.PORT || 3000);
+app.listen(port);
 
 // const views = require("./views");
