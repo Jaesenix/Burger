@@ -1,6 +1,8 @@
+// Import `orm.js` into `burger.js
 const orm = require("../config/orm.js");
 const connection = require("../config/connection.js");
 
+// Create the code that will call the ORM functions using burger specific input for the ORM
 const burger = {
     selectWhere: function(column, value) {
         return new Promise((resolve, reject) => {
@@ -27,4 +29,5 @@ const burger = {
     }
 };
 
+// Export burger.js file
 module.exports = burger;
